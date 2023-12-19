@@ -7,7 +7,7 @@ Azure OpenAI service has published a [system message framework](https://learn.mi
 - **Guardrails**    : Provide additional behavioral guardrails  
 
 This project helps you structure your system prompt using the Azure system message framework.
-The system prompt is broken down into four prompts following the recommeded **categories** as highlighted above. A YAML file declares the pipeline for the system prompts by defining the prompt for each category. 
+The system prompt is broken down into four prompts following the recommended **categories** as highlighted above. A YAML file declares the pipeline for the system prompts by defining the prompt for each category. 
 
 # Improved reusability of system prompts applied to different use cases
 You may need to design a common system prompt for different use cases.
