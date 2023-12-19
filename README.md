@@ -11,7 +11,7 @@ The system prompt is broken down into four prompts following the recommended **c
 
 # Improved reusability of system prompts applied to different use cases
 You may need to design a common system prompt for different use cases.
-For example, you have built chatbot for customer service support that answers questions about product X. You want to re-use the same code and prompts to build a chatbot that answer questions about product Y.
+For example, you have built a chatbot for customer service support that answers questions about product X. You want to re-use the same code and prompts to build a chatbot that answer questions about product Y.
 Without changing the prompt itself, you can simply change the parameter in the Yaml file.
 The same prompt defined in `system_prompt_tasks.txt`` below would apply to both use case:
 ```
@@ -43,9 +43,9 @@ The code is containerised using Docker.
 The module `llm/sysprompts` defines the system prompt templates:
 
 - System prompts for the four different **categories** are defined in `llm/sysprompt/templates`
-- The yaml files which contain the system prompt pipelines and values for prompt parameters is defined in `llm/sysprompt/system_prompt_values.yaml`
+- The yaml files which contains the system prompt pipelines and values for prompt parameters, is defined in `llm/sysprompt/system_prompt_values.yaml`
 - Unit tests for the system prompt are defined in `llm/tests` and are run using pytest.
-- when running Docker image, the overall final system prompt is saved in `llm/sysprompt/output_system_prompt.txt`
+- when running the Docker image, the overall final system prompt is saved in `llm/sysprompt/output_system_prompt.txt`
 
 ### LLM inference
 
