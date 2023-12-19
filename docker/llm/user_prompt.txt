@@ -1,0 +1,19 @@
+Summarise the following text below by extracting three main important statements:
+Hydrogen is a potential energy solution for harder to electrify areas like parts of industry, heavier 
+transport such as aviation and shipping, and potentially heating buildings, as well as the important role it 
+can play in the power sector. Our ambition to have up to 10GW of low carbon hydrogen production 
+capacity by 2030 could generate enough clean electricity to power all of London for a year. Today, we 
+are confirming the first winning projects from the £240 million Net Zero Hydrogen Fund. We are 
+announcing a shortlist of projects for due diligence in the first electrolytic hydrogen allocation round, 
+through which we intend to support up to 250MW of new electrolytic hydrogen production capacity, 
+subject to affordability and value for money. Successful projects in this round will be funded by 
+government until the hydrogen levy is in place. Further, we are announcing our intention to launch a 
+second electrolytic allocation round later this year, through which we intend to support up to 750MW 
+capacity, and to publish a hydrogen production delivery roadmap by the end of the year. The first and
+second allocation rounds are intended to support our ambition of up to 1 GW of electrolytic hydrogen in 
+operation or construction by the end of 2025. We are also naming the CCUS-enabled hydrogen projects 
+moving forward on the Track-1 clusters, intended to support our ambition for up to 1GW of CCUSenabled hydrogen in operation or construction by the end of 2025. To bring forward hydrogen transport 
+and storage infrastructure business models, we are also aiming to introduce legislative powers when 
+parliamentary time allows, which will be crucial to designing these new business models by 2025. These 
+actions are key to potentially unlocking up to £11 billion in private investment by 2030, accelerating the 
+UK hydrogen economy to bolster energy security and potentially supporting over 12,000 jobs by 2030.
