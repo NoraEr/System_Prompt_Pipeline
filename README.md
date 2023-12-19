@@ -44,11 +44,12 @@ The module `llm/sysprompts` defines the system prompt templates:
 
 - System prompts for the four **categories** are defined in `llm/sysprompt/templates`
 - The yaml file which contains the system prompt pipelines and values for prompt parameters, is defined in `llm/sysprompt/system_prompt_values.yaml`
-- Unit tests for the system prompt are defined in `llm/tests` and are run using pytest.
-- when running the Docker image, the overall final system prompt is saved in `llm/sysprompt/output_system_prompt.txt`
+- Unit tests for the system prompt are defined in `llm/tests` and can be run using pytest. They are included in the CI pipeline with Github Actions.
+- When running the Docker image, the final system prompt is saved in `llm/sysprompt/output_system_prompt.txt`
 
 ### LLM inference
 
 The module `llm/inference` defines the inference call to OpenAI API service.
 Inside this module, you should define your Openai API key, the model name and other model parameters in the `.env` file
+Please make sure to not commit any code with your Openai API key to Github.
 
