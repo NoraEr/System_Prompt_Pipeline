@@ -10,7 +10,7 @@ This project helps you structure your system prompt using the Azure system messa
 The system prompt is broken down into four prompts following the recommended **categories** as highlighted above. A YAML configuration file declares the pipeline for the system prompts by defining the prompt for each category. 
 
 ## Re-usable system prompts for different use cases
-You may need to design a common system prompt for different use cases.
+You may need to design a common system prompt and adjust it for different use cases.
 For example, you have built a chatbot for customer service support that answers questions about product X. You want to re-use the same code and prompts to build a chatbot that answer questions about product Y.
 Without changing the prompt itself, you can simply change the parameter in the YAML configuration file.
 The same prompt defined in `system_prompt_tasks.txt`` below would apply to both use cases:
