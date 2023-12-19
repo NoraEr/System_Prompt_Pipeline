@@ -5,13 +5,23 @@ import sys
 
 load_dotenv()
 
+api_key = os.environ.get('OPENAI_API_KEY')
 
 
 class Completion:
     def __init__(self):
-        self.client = openai.OpenAI(api_key=os.environ.get('OPENAI_API_KEY'))
+        self.client = openai.OpenAI(api_key=api_key)
         self.model = os.environ.get('model')
         self.temperature = float(os.environ.get('temperature'))
+    
+    @staticmethod
+    def verify_api_key():
+        try:
+            assert api_key !=""
+        except AssertionError:
+            print('OPENAI API KEY is empty. Please enter your API KEY in .env file')
+            sys.exit(1)
+
 
     @staticmethod
     def verify_user_prompt(user_prompt):
@@ -22,6 +32,7 @@ class Completion:
             sys.exit(1)
 
     def request_response(self, user_prompt, system_prompt):
+        self.verify_api_key()
         self.verify_user_prompt(user_prompt)
 
         try:
