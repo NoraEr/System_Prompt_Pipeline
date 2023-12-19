@@ -42,7 +42,7 @@ The code is containerised using Docker.
 
 The module `llm/sysprompts` defines the system prompt templates:
 
-- System prompts for the four different **categories** are defined in `llm/sysprompt/templates`
+- System prompts for the four **categories** are defined in `llm/sysprompt/templates`
 - The yaml files which contains the system prompt pipelines and values for prompt parameters, is defined in `llm/sysprompt/system_prompt_values.yaml`
 - Unit tests for the system prompt are defined in `llm/tests` and are run using pytest.
 - when running the Docker image, the overall final system prompt is saved in `llm/sysprompt/output_system_prompt.txt`
