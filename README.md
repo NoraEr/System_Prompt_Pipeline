@@ -1,4 +1,4 @@
-# Improved structure and readability of your LLM system prompt
+# Improve structure and readability of your LLM system prompt
 
 Azure OpenAI service has published a [system message framework](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/system-message). System prompts fed into LLM's such as Openai GPT models can be used to guide an AI system’s behavior and improve system performance. Azure system message framework consists of four **categories**:
 - **Tasks**: Define the model’s tasks, capabilities and limitations
