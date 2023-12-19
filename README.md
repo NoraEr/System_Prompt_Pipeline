@@ -50,6 +50,6 @@ The module `llm/sysprompts` defines the system prompt templates:
 ### LLM inference
 
 The module `llm/inference` defines the inference call to OpenAI API service.
-Inside this module, you should define your Openai API key, the model name and other model parameters in the `.env` file
+Inside this module, you should define your Openai API key, the model name and other model parameters in the `.env` file.
 Please make sure to not commit any code with your Openai API key to Github.
 
