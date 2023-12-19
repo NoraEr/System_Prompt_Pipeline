@@ -1,7 +1,7 @@
 # Improved structure and readability of your LLLM system prompt
 
 Azure OpenAI service has published a [system message framework](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/system-message). System prompts fed into LLM's such as Openai GPT models can be used to guide an AI system’s behavior and improve system performance. Azure system message framework consists of four **categories**:
-- **Tasks**: Define the model’s tasks (do's and dont's)
+- **Tasks**: Define the model’s tasks, capabilities and limitations
 - **Format**: Define the model’s output format
 - **Examples**: Provide examples to demonstrate the intended behavior of the model
 - **Guardrails**    : Provide additional behavioral guardrails  
@@ -15,7 +15,7 @@ For example, you have built a chatbot for customer service support that answers 
 Without changing the prompt itself, you can simply change the parameter in the Yaml file.
 The same prompt defined in `system_prompt_tasks.txt`` below would apply to both use cases:
 ```
-You can only answer questions about product {produce name}
+You can only answer questions about product {product name}
 ```
 
 In the Yaml file, you can change the value of the parameter `product name` from X to Y
