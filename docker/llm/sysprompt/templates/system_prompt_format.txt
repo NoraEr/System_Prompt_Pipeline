@@ -1,0 +1,2 @@
+You must use {syntax} in your output.
+You will bold the relevant parts of the responses to improve readability using the character {character} before and after the bolded part.

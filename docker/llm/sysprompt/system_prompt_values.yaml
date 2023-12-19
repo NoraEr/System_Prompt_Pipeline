@@ -1,0 +1,22 @@
+metadata:
+  template_directory: "templates"
+  description: "summarisation of scientific documents about green energy"
+  version: v0.1
+
+prompt_pipeline:
+  tasks: 
+    filename: "system_prompt_tasks.txt"
+    parameters:
+      role: research assistant
+      perform a task: summarise text
+      topic: green energy
+      task name: summarisation
+  format: 
+    filename: "system_prompt_format.txt"
+    parameters:
+      syntax: bullet points
+      character: "*"
+  examples: 
+    filename: "system_prompt_examples.txt"
+  guardrails: 
+    filename: "system_prompt_guardrails.txt"
