@@ -1,5 +1,5 @@
 import pytest
-from llm.sysprompt.system_prompt_pipeline import PromptPipeline
+from docker.llm.sysprompt.system_prompt_pipeline import PromptPipeline
 
 @pytest.fixture
 def generate_system_prompt():
