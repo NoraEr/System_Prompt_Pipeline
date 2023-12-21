@@ -56,7 +56,7 @@ class Completion:
             assert api_key !=""
             return api_key
         except AssertionError:
-            logging.info('OPENAI API KEY is not defined. Please enter your API KEY in .env file')
+            logging.error('OPENAI API KEY is not defined. Please enter your API KEY in .env file')
             return None
 
 
@@ -74,7 +74,7 @@ class Completion:
             assert user_prompt.strip() !=""
             return user_prompt
         except AssertionError:
-            logging.info('User prompt must be non empty. Please enter your prompt in user_prompt.txt file')
+            logging.error('User prompt must be non empty. Please enter your prompt in user_prompt.txt file')
             return None
 
     def request_response(self, user_prompt, system_prompt):
