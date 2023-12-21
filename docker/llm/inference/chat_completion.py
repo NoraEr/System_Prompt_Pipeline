@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 import openai
-import sys
+import logging
 
 load_dotenv()
 
@@ -54,9 +54,10 @@ class Completion:
         """
         try:
             assert api_key !=""
+            return api_key
         except AssertionError:
-            print('OPENAI API KEY is not defined. Please enter your API KEY in .env file')
-            sys.exit(1)
+            logging.error('OPENAI API KEY is not defined. Please enter your API KEY in .env file')
+            return None
 
 
     @staticmethod
@@ -71,9 +72,10 @@ class Completion:
         """
         try:
             assert user_prompt.strip() !=""
+            return user_prompt
         except AssertionError:
-            print('User prompt must be non empty. Please enter your prompt in user_prompt.txt file')
-            sys.exit(1)
+            logging.error('User prompt must be non empty. Please enter your prompt in user_prompt.txt file')
+            return None
 
     def request_response(self, user_prompt, system_prompt):
         """
@@ -84,9 +86,16 @@ class Completion:
                        The user's input prompt for the chat.
         - system_prompt: str
                          The system's input prompt for the chat.
+        
+        Returns:
+        - response: str
+                    response generatedy OpenAI API model
         """
-        self.verify_api_key()
-        self.verify_user_prompt(user_prompt)
+        api_key_check = self.verify_api_key()
+        user_prompt_check = self.verify_user_prompt(user_prompt)
+
+        if api_key_check == None or user_prompt_check == None:
+            return None
 
         try:
             completion = self.client.chat.completions.create(
@@ -96,28 +105,38 @@ class Completion:
             {"role": "system", "content": f"{system_prompt}"},
             {"role": "user", "content": f"{user_prompt}"}])
             response = completion.choices[0].message.content
-            print(response)
+            return response
     
         except openai.AuthenticationError as error:
-            print('Invalid Openai API key:', error)
+            logging.error(f"Invalid Openai API key: {error}")
+            return None
         except openai.RateLimitError as error:
-            print('Too many requests:', error)
+            logging.error(f"Too many requests: {error}")
+            return None
         except openai.APIConnectionError as error:
-            print('API connection error:', error)
+            logging.error(f"API connection error: {error}")
+            return None
         except openai.APITimeoutError as error:
-            print('API timeout error:', error)
+            logging.error(f"API timeout error: {error}")
+            return None
         except openai.BadRequestError as error:
-            print('Bad request error:', error)
+            logging.error(f"Bad request error: {error}")
+            return None
         except openai.ConflictError as error:
-            print('Conflict error:', error)
+            logging.error(f"Conflict error: {error}")
+            return None
         except openai.InternalServerError as error:
-            print('Internal server error:', error)
+            logging.error(f"Internal server error: {error}")
+            return None
         except openai.NotFoundError as error:
-            print('Request resource not found:', error)
+            logging.error(f"Request resource not found: {error}")
+            return None
         except openai.PermissionDeniedError as error:
-            print('Permission denied:', error)
+            logging.error(f"Permission denied: {error}")
+            return None
         except openai.UnprocessableEntityError as error:
-            print('Unable to process request:', error)
+            logging.error(f"Unable to process request: {error}")
+            return None
 
 
     
