@@ -42,7 +42,8 @@ The code is containerised using Docker and can be found in `docker` folder.
 - Inside `docker` folder, build the image using:
 ``` docker build -t <image_name> -f Dockerfile . ```
 - Run the image using: ```docker run <image_name>```
-  This prints the system prompt, user prompt as well as OPENAI API response in the terminal.
+  This will output the logs for the system prompt, user prompt as well as OPENAI API response in the terminal.
+  Any application errors are handled and logged.
 
 ## Code structure
 
