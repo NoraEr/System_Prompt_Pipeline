@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 import openai
-import logging
+from .. import app_logger
 
 load_dotenv()
 
@@ -56,7 +56,7 @@ class Completion:
             assert api_key !=""
             return api_key
         except AssertionError:
-            logging.error('OPENAI API KEY is not defined. Please enter your API KEY in .env file')
+            app_logger.error('OPENAI API KEY is not defined. Please enter your API KEY in .env file')
             return None
 
 
@@ -74,7 +74,7 @@ class Completion:
             assert user_prompt.strip() !=""
             return user_prompt
         except AssertionError:
-            logging.error('User prompt must be non empty. Please enter your prompt in user_prompt.txt file')
+            app_logger.error('User prompt must not be empty. Please enter your prompt in user_prompt.txt file')
             return None
 
     def request_response(self, user_prompt, system_prompt):
@@ -108,34 +108,34 @@ class Completion:
             return response
     
         except openai.AuthenticationError as error:
-            logging.error(f"Invalid Openai API key: {error}")
+            app_logger.error(f"Invalid Openai API key: {error}")
             return None
         except openai.RateLimitError as error:
-            logging.error(f"Too many requests: {error}")
+            app_logger.error(f"Too many requests: {error}")
             return None
         except openai.APIConnectionError as error:
-            logging.error(f"API connection error: {error}")
+            app_logger.error(f"API connection error: {error}")
             return None
         except openai.APITimeoutError as error:
-            logging.error(f"API timeout error: {error}")
+            app_logger.error(f"API timeout error: {error}")
             return None
         except openai.BadRequestError as error:
-            logging.error(f"Bad request error: {error}")
+            app_logger.error(f"Bad request error: {error}")
             return None
         except openai.ConflictError as error:
-            logging.error(f"Conflict error: {error}")
+            app_logger.error(f"Conflict error: {error}")
             return None
         except openai.InternalServerError as error:
-            logging.error(f"Internal server error: {error}")
+            app_logger.error(f"Internal server error: {error}")
             return None
         except openai.NotFoundError as error:
-            logging.error(f"Request resource not found: {error}")
+            app_logger.error(f"Request resource not found: {error}")
             return None
         except openai.PermissionDeniedError as error:
-            logging.error(f"Permission denied: {error}")
+            app_logger.error(f"Permission denied: {error}")
             return None
         except openai.UnprocessableEntityError as error:
-            logging.error(f"Unable to process request: {error}")
+            app_logger.error(f"Unable to process request: {error}")
             return None
 
 
